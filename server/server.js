@@ -9,6 +9,7 @@ const { User } = require('./models/user')
 
 const app = express()
 
+const port = process.env.PORT || 300
 // set middleware for express
 app.use(bodyParser.json())
 
@@ -46,8 +47,8 @@ app.get('/todos/:id', (req, res) => {
   }).then((err) => res.status(400).send())
 })
 
-app.listen(3000, () => {
-  console.log('Server started on port 3000')
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`)
 })
 
 module.exports = {
