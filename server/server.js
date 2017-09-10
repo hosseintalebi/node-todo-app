@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const { ObjectID } = require('mongodb')
 
 // Local imports
+require('./config/config')
 const { mongoose } = require('./db/mongoose')
 const { Todo } = require('./models/todo')
 const { User } = require('./models/user')
