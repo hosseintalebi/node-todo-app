@@ -71,7 +71,7 @@ app.patch('/todos/:id', (req, res) => {
 
   if (_.isBoolean(body.completed) && body.completed) {
     body.completedAt = new Date().getTime()
-  } else {
+  } else if (_.isBoolean(body.completed) && body.completed === false){
     body.completed = false
     body.completedAt = null
   }
