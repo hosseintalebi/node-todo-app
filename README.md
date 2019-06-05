@@ -4,7 +4,7 @@ Backend APIs for todo app using Node, MongoDB, and Mongoose.
 
 ## How To Use
 
-Use this heroku app for acessing the endpoints:
+Use this heroku app for accessing the endpoints:
 https://fast-depths-86514.herokuapp.com/
 
 ## Model
@@ -31,6 +31,7 @@ text: {
 ### GET
 
 **/todos** returns all the todos in the database.
+
 **/todos/:id** fetches a todo using the todo id.
 
 ### POST
