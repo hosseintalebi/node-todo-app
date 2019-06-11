@@ -16,6 +16,17 @@ const port = process.env.PORT || 3000
 // set middleware for express
 app.use(bodyParser.json())
 
+// allow websites from other domains to access this service
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,POST,DELETE,PATCH");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.post('/todos', (req, res) => {
   const todo = new Todo({
     text: req.body.text,
